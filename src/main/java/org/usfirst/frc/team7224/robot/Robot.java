@@ -76,7 +76,7 @@ public class Robot extends TimedRobot {
 	//	  autoChooser.addObject("Right Start Auto Select", new AutonomousGrpRightAutoSelect());
 	      autoChooser.addDefault("xx Do Nothing", new AutonomousCmdDoNothing());
 		  autoChooser.addObject("xx Drive Forward", new AutonomousGrpDriveForward());
-	//	  autoChooser.addObject("xx File Generator", new AutonomousGrpFileGenerator());
+		  autoChooser.addObject("xx File Generator", new AutonomousGrpFileGenerator());
 		  SmartDashboard.putData("Autonomous mode chooser", autoChooser);
 		 
 	      server = CameraServer.getInstance();

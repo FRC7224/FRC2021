@@ -7,7 +7,7 @@ public class AutonomousGrpFileGenerator extends CommandGroup{
 	public AutonomousGrpFileGenerator(){
 		
 
-//	addSequential(new AutonomousCmdTrajectoryFollowerFileGenerator(0, 0, 0,140,0, 0)); // drive straight
+	addSequential(new AutonomousCmdTrajectoryFollowerFileGenerator(0, 0, 0,140,0, 0)); // drive straight
  //  	addSequential(new AutonomousCmdTrajectoryFollowerFileGenerator(0, 0, 0,270, 14, 60));// rightToScale
 // addSequential(new AutonomousCmdTrajectoryFollowerFileGenerator(0, 0, 0,270,-14, -60));// leftToScale
  //   	addSequential(new AutonomousCmdTrajectoryFollowerFileGenerator(0, 0, 0,124,14, 70));// righttoswitch
