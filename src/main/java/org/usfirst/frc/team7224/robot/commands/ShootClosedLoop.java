@@ -56,7 +56,7 @@ public class ShootClosedLoop extends Command {
             }
         }
 
-        if (Robot.oi.joystick1.getRawButton(RobotConstants.zoneup)) {
+        if (Robot.oi.joystick1.getRawButton(RobotConstants.zonedown)) {
             if (RobotConstants.zone > 0) {
                 RobotConstants.zone = RobotConstants.zone - 1;
             }
