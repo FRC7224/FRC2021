@@ -40,12 +40,6 @@ public class Robot extends TimedRobot {
 	Preferences prefs;
 
 
-
-
-
-
-	
-
 	public static final Chassis chassis
 	        = new Chassis();
 	public static final Shoot shoot
@@ -72,6 +66,17 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
+
+        prefs = Preferences.getInstance();
+        RobotConstants.z1shootspeed1 = prefs.getDouble("Zone 1 Motor 1", RobotConstants.zone1shootertargetspeed1);
+        RobotConstants.z1shootspeed2 = prefs.getDouble("Zone 1 Motor 2", RobotConstants.zone1shootertargetspeed2);
+        RobotConstants.z2shootspeed1 = prefs.getDouble("Zone 2 Motor 1", RobotConstants.zone2shootertargetspeed1);
+        RobotConstants.z2shootspeed2 = prefs.getDouble("Zone 2 Motor 2", RobotConstants.zone2shootertargetspeed2);
+        RobotConstants.z3shootspeed1 = prefs.getDouble("Zone 3 Motor 1", RobotConstants.zone3shootertargetspeed1);
+        RobotConstants.z3shootspeed2 = prefs.getDouble("Zone 3 Motor 2", RobotConstants.zone3shootertargetspeed2);
+        RobotConstants.z4shootspeed1 = prefs.getDouble("Zone 4 Motor 1", RobotConstants.zone4shootertargetspeed1);
+        RobotConstants.z4shootspeed2 = prefs.getDouble("Zone 4 Motor 2", RobotConstants.zone4shootertargetspeed2);
+
 	//	Command autonomousCommand;
 	//	SendableChooser<Command> autoChooser;
 		
