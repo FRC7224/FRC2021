@@ -8,7 +8,6 @@ import org.usfirst.frc.team7224.robot.Robot;
 import org.usfirst.frc.team7224.robot.RobotConstants;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import jaci.pathfinder.Pathfinder;
 import jaci.pathfinder.Trajectory;
 import jaci.pathfinder.Waypoint;
@@ -147,9 +146,6 @@ public class AutonomousCmdTrajectoryFollowerFileGenerator extends Command {
       // setLeftMotors(l + turn);
       // setRightMotors(r - turn);
       ////// End sample setup
-
-      double l = 0;
-      double r = 0;
 
       public void run() {
         lasttime = edu.wpi.first.wpilibj.Timer.getFPGATimestamp();
