@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
@@ -15,13 +16,13 @@ import org.usfirst.frc.team7224.robot.commands.*;
 
 public class Chassis extends PIDSubsystem {
 
-     private final WPI_VictorSPX right1 = RobotMap.chassisTalonSPX1;
-     private final WPI_VictorSPX right2 = RobotMap.chassisTalonSPX2;
-     private final WPI_VictorSPX right3 = RobotMap.chassisTalonSPX3;
+     private final WPI_TalonSRX right1 = RobotMap.chassisTalonSPX1;
+     private final WPI_TalonSRX right2 = RobotMap.chassisTalonSPX2;
+     private final WPI_TalonSRX right3 = RobotMap.chassisTalonSPX3;
 
-     private final WPI_VictorSPX left1 = RobotMap.chassisTalonSPX4;
-     private final WPI_VictorSPX left2 = RobotMap.chassisTalonSPX5;
-     private final WPI_VictorSPX left3 = RobotMap.chassisTalonSPX6;
+     private final WPI_TalonSRX left1 = RobotMap.chassisTalonSPX4;
+     private final WPI_TalonSRX left2 = RobotMap.chassisTalonSPX5;
+     // private final WPI_TalonSRX left3 = RobotMap.chassisTalonSPX6;
 
      private final ADXRS450_Gyro gyro = RobotMap.spiGyro_1;
 
@@ -100,7 +101,7 @@ public class Chassis extends PIDSubsystem {
      public void setupDrive() {
 
           left1.follow(left2);
-          left3.follow(left2);
+          // left3.follow(left2);
 
           right2.set(ControlMode.PercentOutput, 0);
           right1.follow(right2);
@@ -118,14 +119,14 @@ public class Chassis extends PIDSubsystem {
           if (brakemode) {
                left1.setNeutralMode(NeutralMode.Brake);
                left2.setNeutralMode(NeutralMode.Brake);
-               left3.setNeutralMode(NeutralMode.Brake);
+               // left3.setNeutralMode(NeutralMode.Brake);
                right1.setNeutralMode(NeutralMode.Brake);
                right2.setNeutralMode(NeutralMode.Brake);
                right3.setNeutralMode(NeutralMode.Brake);
           } else {
                left1.setNeutralMode(NeutralMode.Coast);
                left2.setNeutralMode(NeutralMode.Coast);
-               left3.setNeutralMode(NeutralMode.Coast);
+               // left3.setNeutralMode(NeutralMode.Coast);
                right1.setNeutralMode(NeutralMode.Coast);
                right2.setNeutralMode(NeutralMode.Coast);
                right3.setNeutralMode(NeutralMode.Coast);

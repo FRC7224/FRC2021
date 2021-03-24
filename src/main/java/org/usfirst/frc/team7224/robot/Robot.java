@@ -56,14 +56,14 @@ public class Robot extends TimedRobot {
           oi = new OI();
 
           prefs = Preferences.getInstance();
-          RobotConstants.z1shootspeed1 = prefs.getDouble("Zone1Motor1", RobotConstants.zone1shootertargetspeed1);
-          RobotConstants.z1shootspeed2 = prefs.getDouble("Zone1Motor2", RobotConstants.zone1shootertargetspeed2);
-          RobotConstants.z2shootspeed1 = prefs.getDouble("Zone2Motor1", RobotConstants.zone2shootertargetspeed1);
-          RobotConstants.z2shootspeed2 = prefs.getDouble("Zone2Motor2", RobotConstants.zone2shootertargetspeed2);
-          RobotConstants.z3shootspeed1 = prefs.getDouble("Zone3Motor1", RobotConstants.zone3shootertargetspeed1);
-          RobotConstants.z3shootspeed2 = prefs.getDouble("Zone3Motor2", RobotConstants.zone3shootertargetspeed2);
-          RobotConstants.z4shootspeed1 = prefs.getDouble("Zone4Motor1", RobotConstants.zone4shootertargetspeed1);
-          RobotConstants.z4shootspeed2 = prefs.getDouble("Zone4Motor2", RobotConstants.zone4shootertargetspeed2);
+          // RobotConstants.z1shootspeed1 = prefs.getDouble("Zone1Motor1", RobotConstants.zone1shootertargetspeed1);
+          // RobotConstants.z1shootspeed2 = prefs.getDouble("Zone1Motor2", RobotConstants.zone1shootertargetspeed2);
+          // RobotConstants.z2shootspeed1 = prefs.getDouble("Zone2Motor1", RobotConstants.zone2shootertargetspeed1);
+          // RobotConstants.z2shootspeed2 = prefs.getDouble("Zone2Motor2", RobotConstants.zone2shootertargetspeed2);
+          // RobotConstants.z3shootspeed1 = prefs.getDouble("Zone3Motor1", RobotConstants.zone3shootertargetspeed1);
+          // RobotConstants.z3shootspeed2 = prefs.getDouble("Zone3Motor2", RobotConstants.zone3shootertargetspeed2);
+          // RobotConstants.z4shootspeed1 = prefs.getDouble("Zone4Motor1", RobotConstants.zone4shootertargetspeed1);
+          // RobotConstants.z4shootspeed2 = prefs.getDouble("Zone4Motor2", RobotConstants.zone4shootertargetspeed2);
           SmartDashboard.putNumber("Zone1Motor1", RobotConstants.z1shootspeed1);
           SmartDashboard.putNumber("Zone1Motor2", RobotConstants.z1shootspeed2);
           SmartDashboard.putNumber("Zone2Motor1", RobotConstants.z2shootspeed1);
