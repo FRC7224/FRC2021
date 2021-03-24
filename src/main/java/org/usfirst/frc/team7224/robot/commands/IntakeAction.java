@@ -25,10 +25,8 @@ public class IntakeAction extends Command {
     @Override
     protected void execute() { // check in first
         double intakespeed = 0;
-        double turnspeed = 0;
         if (Robot.oi.joystick1.getRawButton(RobotConstants.kintakeinbutton)) {
             intakespeed = RobotConstants.kmaxIntakeSpeed;
-            turnspeed = RobotConstants.kturnspeed;
             Robot.intake.setIntakeMotor(intakespeed);
             // Robot.shoot.setturnSpeed(turnspeed);
         } else { // toggle off
