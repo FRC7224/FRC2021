@@ -84,6 +84,14 @@ public class Robot extends TimedRobot {
 		SmartDashboard.putNumber("Zone3Motor2", RobotConstants.z3shootspeed2);
 		SmartDashboard.putNumber("Zone4Motor1", RobotConstants.z4shootspeed1);
 		SmartDashboard.putNumber("Zone4Motor2", RobotConstants.z4shootspeed2);
+		SmartDashboard.getNumber("Zone1Motor1", RobotConstants.z1shootspeed1);
+		SmartDashboard.getNumber("Zone1Motor2", RobotConstants.z1shootspeed2);
+		SmartDashboard.getNumber("Zone2Motor1", RobotConstants.z2shootspeed1);
+		SmartDashboard.getNumber("Zone2Motor2", RobotConstants.z2shootspeed1);
+		SmartDashboard.getNumber("Zone3Motor1", RobotConstants.z3shootspeed1);
+		SmartDashboard.getNumber("Zone3Motor2", RobotConstants.z3shootspeed2);
+		SmartDashboard.getNumber("Zone4Motor1", RobotConstants.z4shootspeed1);
+		SmartDashboard.getNumber("Zone4Motor2", RobotConstants.z4shootspeed2);
 
 	//	Command autonomousCommand;
 	//	SendableChooser<Command> autoChooser;
