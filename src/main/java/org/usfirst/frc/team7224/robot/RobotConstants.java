@@ -22,9 +22,9 @@ public class RobotConstants {
 	public static int kintakeoutbutton = 4;
 	// public static int kzeroResetbutton = 4;
 	public static int kwheelgraboutbutton = 9;
-	public static int kwheelgrabonbutton = 6;
+	public static int zonedown = 6;
 	public static int kWinchButtonA = 10;
-	public static int kWinchButtonB = 5;
+	public static int zoneup = 5;
 	public static int kpreButton = 7;
 	public static int kShootOverideButton = 8;
 

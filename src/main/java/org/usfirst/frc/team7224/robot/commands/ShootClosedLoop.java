@@ -50,11 +50,16 @@ public class ShootClosedLoop extends Command {
         final double timetorun = RobotConstants.shooterTimer_timer;
 
         // cahnge zones
-        double zChange = -Robot.chassis.deadZone(Robot.oi.joystick1.getZ()); // forward
-        if ((zChange > 0.5) & (RobotConstants.zone < 4)) {
-            RobotConstants.zone = RobotConstants.zone + 1;
-        } else if ((zChange > -0.5) & (RobotConstants.zone < 0)) {
-            RobotConstants.zone = RobotConstants.zone - 1;
+        if (Robot.oi.joystick1.getRawButton(RobotConstants.zoneup)) {
+            if (RobotConstants.zone < 4) {
+                RobotConstants.zone = RobotConstants.zone + 1;
+            }
+        }
+
+        if (Robot.oi.joystick1.getRawButton(RobotConstants.zoneup)) {
+            if (RobotConstants.zone > 0) {
+                RobotConstants.zone = RobotConstants.zone - 1;
+            }
         }
 
         SmartDashboard.putNumber("Zone", RobotConstants.zone);
