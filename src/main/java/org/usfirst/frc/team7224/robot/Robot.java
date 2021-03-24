@@ -6,8 +6,10 @@
 /*----------------------------------------------------------------------------*/
 
 package org.usfirst.frc.team7224.robot;
+
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.livewindow.*;
 import edu.wpi.first.wpilibj.command.Command;
@@ -34,6 +36,15 @@ import org.usfirst.frc.team7224.robot.subsystems.Intake;
  * project.
  */
 public class Robot extends TimedRobot {
+
+	Preferences prefs;
+
+
+
+
+
+
+	
 
 	public static final Chassis chassis
 	        = new Chassis();

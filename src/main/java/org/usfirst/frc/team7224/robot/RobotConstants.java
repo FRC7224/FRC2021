@@ -111,8 +111,15 @@ public static double khookspeedscale = 0.2;
 
 	// Shooter Constants
 
-	public static double shootertargetspeed1 = 23000;
-	public static double shootertargetspeed2 = 13000;
+	public static int zone;
+	public static double zone1shootertargetspeed1 = 23000;
+	public static double zone1shootertargetspeed2 = 13000;
+	public static double zone2shootertargetspeed1 = 23000;
+	public static double zone2shootertargetspeed2 = 13000;
+	public static double zone3shootertargetspeed1 = 23000;
+	public static double zone3shootertargetspeed2 = 13000;
+	public static double zone4shootertargetspeed1 = 23000;
+	public static double zone4shootertargetspeed2 = 13000;
 	public static double shooterTolerance = 300.0;
 	public static double shooterTimer_timer = 1.2;
 	public static boolean shooterMode = false;
