@@ -5,37 +5,29 @@ import org.usfirst.frc.team7224.robot.commands.PneumaticsStart;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.command.Subsystem;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-/**
-*
-*/
+
 public class Pneumatics extends Subsystem {
 
+    private final Compressor compressor = RobotMap.pneumaticsCompressor;
 
-   private final Compressor compressor = RobotMap.pneumaticsCompressor;
+    // Put methods for controlling this subsystem
+    // here. Call these from Commands.
 
+    public void initDefaultCommand() {
 
-   // Put methods for controlling this subsystem
-   // here. Call these from Commands.
+        setDefaultCommand(new PneumaticsStart());
 
-   public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        // setDefaultCommand(new MySpecialCommand());
+    }
 
+    public void stopCompressor() {
+        compressor.stop();
+    }
 
-       setDefaultCommand(new PneumaticsStart());
-
-
-       // Set the default command for a subsystem here.
-       // setDefaultCommand(new MySpecialCommand());
-   }
-
-   public void stopCompressor() {
-       compressor.stop();
-   }
-
-   public void startCompressor() {
-       compressor.start();
-//   	SmartDashboard.putNumber("got to start", 0);
-   }
+    public void startCompressor() {
+        compressor.start();
+        // SmartDashboard.putNumber("got to start", 0);
+    }
 }
-

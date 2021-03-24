@@ -3,11 +3,9 @@ package org.usfirst.frc.team7224.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.Preferences;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import org.usfirst.frc.team7224.robot.Robot;
 import org.usfirst.frc.team7224.robot.RobotConstants;
-import org.usfirst.frc.team7224.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
