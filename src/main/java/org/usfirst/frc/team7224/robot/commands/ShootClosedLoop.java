@@ -23,6 +23,7 @@ public class ShootClosedLoop extends Command {
     // Used for Button Toggle Code
     private final Timer timer = new Timer();
 
+
     public ShootClosedLoop() {
 
         requires(Robot.shoot);
@@ -35,6 +36,7 @@ public class ShootClosedLoop extends Command {
         Robot.shoot.setupShooter();
         RobotConstants.shooterMode = false;
         timer.start();
+
 
     }
 
@@ -50,13 +52,13 @@ public class ShootClosedLoop extends Command {
         final double timetorun = RobotConstants.shooterTimer_timer;
 
         // cahnge zones
-        if (Robot.oi.joystick1.getRawButton(RobotConstants.zoneup)) {
+        if (Robot.oi.joystick1.getRawButtonPressed(RobotConstants.zoneup)) {
             if (RobotConstants.zone < 4) {
                 RobotConstants.zone = RobotConstants.zone + 1;
             }
         }
 
-        if (Robot.oi.joystick1.getRawButton(RobotConstants.zonedown)) {
+        if (Robot.oi.joystick1.getRawButtonPressed(RobotConstants.zonedown)) {
             if (RobotConstants.zone > 0) {
                 RobotConstants.zone = RobotConstants.zone - 1;
             }
