@@ -1,13 +1,15 @@
 package org.usfirst.frc.team7224.robot.commands;
 
 import java.io.File;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 import org.usfirst.frc.team7224.robot.Robot;
 import org.usfirst.frc.team7224.robot.RobotConstants;
 
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc.team7224.robot.Point;
+
+
 import jaci.pathfinder.Pathfinder;
 import jaci.pathfinder.Trajectory;
 import jaci.pathfinder.Waypoint;
@@ -15,6 +17,7 @@ import jaci.pathfinder.followers.EncoderFollower;
 import jaci.pathfinder.modifiers.TankModifier;
 
 public class AutonomousCmdTrajectoryFollowerFileGenerator extends Command {
+
 
   edu.wpi.first.wpilibj.Timer timeout;
   Timer t;
@@ -25,14 +28,18 @@ public class AutonomousCmdTrajectoryFollowerFileGenerator extends Command {
   EncoderFollower right;
   private static double inchesToMeter = 0.0254;
   // This has a max size of three
-  Waypoint[] waypoints = new Waypoint[2];
+  List<Waypoint> waypoints = new ArrayList<Waypoint>();
 
-  public AutonomousCmdTrajectoryFollowerFileGenerator(double x0, double y0, double d0, double x1, double y1,
-      double d1) {
+  String ScenarioName;
+
+  
+
+  public AutonomousCmdTrajectoryFollowerFileGenerator(List<Point> xyPoints, String scenarioName) {
     requires(Robot.chassis);
-    waypoints[0] = new Waypoint(x0 * inchesToMeter, y0 * inchesToMeter, Math.toRadians(d0));
-    waypoints[1] = new Waypoint(x1 * inchesToMeter, y1 * inchesToMeter, Math.toRadians(d1));
-
+    for (Point point : xyPoints) {
+      waypoints.add(point.X * inchesToMeter, point.Y * inchesToMeter, point.D);
+    }
+    ScenarioName = scenarioName;
   }
 
   @Override
@@ -63,35 +70,34 @@ public class AutonomousCmdTrajectoryFollowerFileGenerator extends Command {
     // new Waypoint(0,0, Pathfinder.d2r(0)),
     // new Waypoint(5,0, Pathfinder.d2r(0))
     // };
+    for (int i = 0, j = 0; i < waypoints.size() - 1; i++,j++) {
+      Waypoint[] points = waypoints.subList(i, i+1).toArray(Waypoint[] :: new);
+      // SmartDashboard.putNumber("files writer2", 0);
 
-    Waypoint[] points = waypoints;
-    // SmartDashboard.putNumber("files writer2", 0);
+      // Trajectory.Config config = new
+      // Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC,
+      // Trajectory.Config.SAMPLES_LOW, 0.05, 8.0, 2.0, 60.0);
+      // Prepare the Trajectory for Generation.
+      //
+      // Arguments:
+      // Fit Function: FIT_HERMITE_CUBIC or FIT_HERMITE_QUINTIC
+      // Sample Count: PATHFINDER_SAMPLES_HIGH (100 000)
+      // PATHFINDER_SAMPLES_LOW (10 000)
+      // PATHFINDER_SAMPLES_FAST (1 000)
+      // Time Step: 0.001 Seconds
+      // Max Velocity: 15 m/s
+      // Max Acceleration: 10 m/s/s
+      // Max Jerk: 60 m/s/s/s
+      // Trajectory.Config config = new
+      // Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC,
+      // Trajectory.Config.SAMPLES_LOW,0.05, .35, .3, .4);
+      Trajectory.Config config = new Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC, Trajectory.Config.SAMPLES_LOW,
+          0.05, 1.2, .5, .4);
 
-    // Trajectory.Config config = new
-    // Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC,
-    // Trajectory.Config.SAMPLES_LOW, 0.05, 8.0, 2.0, 60.0);
-    // Prepare the Trajectory for Generation.
-    //
-    // Arguments:
-    // Fit Function: FIT_HERMITE_CUBIC or FIT_HERMITE_QUINTIC
-    // Sample Count: PATHFINDER_SAMPLES_HIGH (100 000)
-    // PATHFINDER_SAMPLES_LOW (10 000)
-    // PATHFINDER_SAMPLES_FAST (1 000)
-    // Time Step: 0.001 Seconds
-    // Max Velocity: 15 m/s
-    // Max Acceleration: 10 m/s/s
-    // Max Jerk: 60 m/s/s/s
-    // Trajectory.Config config = new
-    // Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC,
-    // Trajectory.Config.SAMPLES_LOW,0.05, .35, .3, .4);
-    Trajectory.Config config = new Trajectory.Config(Trajectory.FitMethod.HERMITE_CUBIC, Trajectory.Config.SAMPLES_LOW,
-        0.05, 1.2, .5, .4);
-
-    Trajectory trajectory = Pathfinder.generate(points, config);
-    File myFile = new File("/home/lvuser/mytrafile.csv");
-    Pathfinder.writeToCSV(myFile, trajectory);
-    // File myFile = new File("/home/lvuser/leftToScale.traj");
-    // Pathfinder.writeToFile(myFile, trajectory);
+      Trajectory trajectory = Pathfinder.generate(points, config);
+      File myFile = new File(String.format("/home/lvuser/%s%d.csv", j));
+      Pathfinder.writeToCSV(myFile, trajectory);
+    }
 
     double wheelbase_width = .61; // MG updated
 

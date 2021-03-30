@@ -132,6 +132,7 @@ public class RobotConstants {
      public static double kshoot2I = 0.001;
      public static double kshoot2D = 20;
      public static double kshoot2F = 1023.0 / 7200.0;
+     
      // public static double kshootF = 0.25;
 
      // * PID Gains may have to be adjusted based on the responsiveness of control
