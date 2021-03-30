@@ -108,8 +108,8 @@ public class RobotConstants {
      public static double zone2shootertargetspeed2 = 10000;
      public static double zone3shootertargetspeed1 = 25000;
      public static double zone3shootertargetspeed2 = 10000;
-     public static double zone4shootertargetspeed1 = 25000;
-     public static double zone4shootertargetspeed2 = 10000;
+     public static double zone4shootertargetspeed1 = 32500;
+     public static double zone4shootertargetspeed2 = 8000;
      public static double z1shootspeed1 = zone1shootertargetspeed1;
      public static double z1shootspeed2 = zone1shootertargetspeed2;
      public static double z2shootspeed1 = zone2shootertargetspeed1;
