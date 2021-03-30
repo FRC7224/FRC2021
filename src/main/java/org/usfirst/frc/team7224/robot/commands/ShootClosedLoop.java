@@ -57,7 +57,7 @@ public class ShootClosedLoop extends Command {
         }
 
         if (Robot.oi.joystick1.getRawButtonPressed(RobotConstants.zonedown)) {
-            if (RobotConstants.zone > 0) {
+            if (RobotConstants.zone > 1) {
                 RobotConstants.zone = RobotConstants.zone - 1;
             }
         }
@@ -69,24 +69,24 @@ public class ShootClosedLoop extends Command {
 
             switch (RobotConstants.zone) {
                 case 1: // Zone 1 Green
-                    motorSpeed1 = RobotConstants.z1shootspeed1;
-                    motorSpeed2 = RobotConstants.z1shootspeed2;
+                    motorSpeed1 = RobotConstants.zone1shootertargetspeed1;
+                    motorSpeed2 = RobotConstants.zone1shootertargetspeed2;
                     break;
                 case 2: // Zone 2 Yellow
-                    motorSpeed1 = RobotConstants.z2shootspeed1;
-                    motorSpeed2 = RobotConstants.z2shootspeed2;
+                    motorSpeed1 = RobotConstants.zone2shootertargetspeed1;
+                    motorSpeed2 = RobotConstants.zone2shootertargetspeed2;
                     break;
                 case 3: // Zone 3 Blue
-                    motorSpeed1 = RobotConstants.z3shootspeed1;
-                    motorSpeed2 = RobotConstants.z3shootspeed2;
+                    motorSpeed1 = RobotConstants.zone3shootertargetspeed1;
+                    motorSpeed2 = RobotConstants.zone3shootertargetspeed2;
                     break;
                 case 4: // Zone 4 red
-                    motorSpeed1 = RobotConstants.z4shootspeed1;
-                    motorSpeed2 = RobotConstants.z4shootspeed2;
+                    motorSpeed1 = RobotConstants.zone4shootertargetspeed1;
+                    motorSpeed2 = RobotConstants.zone4shootertargetspeed2;
                     break;
                 default: // Zone 4
-                    motorSpeed1 = RobotConstants.z4shootspeed1;
-                    motorSpeed2 = RobotConstants.z4shootspeed2;
+                    motorSpeed1 = RobotConstants.zone4shootertargetspeed1;
+                    motorSpeed2 = RobotConstants.zone4shootertargetspeed2;
                     break;
             }
 
