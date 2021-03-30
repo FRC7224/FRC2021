@@ -101,15 +101,15 @@ public class RobotConstants {
 
      // Shooter Constants
 
-     public static int zone;
+     public static int zone = 4;
      public static double zone1shootertargetspeed1 = 23000;
-     public static double zone1shootertargetspeed2 = 13000;
-     public static double zone2shootertargetspeed1 = 23000;
-     public static double zone2shootertargetspeed2 = 13000;
-     public static double zone3shootertargetspeed1 = 23000;
-     public static double zone3shootertargetspeed2 = 13000;
-     public static double zone4shootertargetspeed1 = 23000;
-     public static double zone4shootertargetspeed2 = 13000;
+     public static double zone1shootertargetspeed2 = 9000;
+     public static double zone2shootertargetspeed1 = 22000;
+     public static double zone2shootertargetspeed2 = 10000;
+     public static double zone3shootertargetspeed1 = 25000;
+     public static double zone3shootertargetspeed2 = 10000;
+     public static double zone4shootertargetspeed1 = 32500;
+     public static double zone4shootertargetspeed2 = 8000;
      public static double z1shootspeed1 = zone1shootertargetspeed1;
      public static double z1shootspeed2 = zone1shootertargetspeed2;
      public static double z2shootspeed1 = zone2shootertargetspeed1;
