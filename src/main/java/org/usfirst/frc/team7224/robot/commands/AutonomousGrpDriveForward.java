@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutonomousGrpDriveForward extends CommandGroup {
 
     public AutonomousGrpDriveForward() { // Drives forward
-        addSequential(new AutonomousCmdTrajectoryFollowerTwoFixFile(0));
+        addSequential(new AutonomousCmdTrajectoryFollowerTwoFixFile("driveForward.csv"));
     }
 
 }
