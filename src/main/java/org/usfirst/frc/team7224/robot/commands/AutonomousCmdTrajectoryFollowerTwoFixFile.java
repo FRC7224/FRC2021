@@ -30,20 +30,19 @@ public class AutonomousCmdTrajectoryFollowerTwoFixFile extends Command {
   public double maxtimeout = 8;
   EncoderFollower left;
   EncoderFollower right;
-  public int Filenum = 0;
+  public String FileName = "";
   // This has a max size of three
   Waypoint[] waypoints = new Waypoint[2];
 
-  public AutonomousCmdTrajectoryFollowerTwoFixFile(int filenum) { // filenum
+  public AutonomousCmdTrajectoryFollowerTwoFixFile(String fileName) { // filenum
     requires(Robot.chassis);
-    Filenum = filenum;
+    FileName = fileName;
   }
 
   @Override
   protected void initialize() {
     timeout = new edu.wpi.first.wpilibj.Timer();
     timeout.start();
-    String fileString;
     RobotConstants.isTrajectory = true;
     Robot.chassis.setupDrive();
     RobotConstants.TrajectorySegments = 0;
@@ -52,19 +51,19 @@ public class AutonomousCmdTrajectoryFollowerTwoFixFile extends Command {
     // Determine Switch, Scale or far Switch
     // ***********************************************
     SmartDashboard.putString("debug output", "selecting file");
-    switch (Filenum) {
-      case 0: // Drive straight
-        fileString = "/home/lvuser/mytrafile.csv";
-        maxtimeout = 10;
-        break;
+    // switch (Filenum) {
+    //   case 0: // Drive straight
+    //     fileString = "/home/lvuser/mytrafile.csv";
+    //     maxtimeout = 10;
+    //     break;
 
-      default: // Default drive straight
-        fileString = "/home/lvuser/driveStraight.traj";
-        maxtimeout = 10;
-        break;
-    } // end of switch
+    //   default: // Default drive straight
+    //     fileString = "/home/lvuser/driveStraight.traj";
+    //     maxtimeout = 10;
+    //     break;
+    // } // end of switch
 
-    File myFile = new File(fileString);
+    File myFile = new File(FileName);
 
     // Waypoint[] points = waypoints;
     // Trajectory.Config config = new

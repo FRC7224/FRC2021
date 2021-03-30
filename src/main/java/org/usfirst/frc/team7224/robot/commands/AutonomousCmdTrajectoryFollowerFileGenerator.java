@@ -67,7 +67,7 @@ public class AutonomousCmdTrajectoryFollowerFileGenerator extends Command {
     // new Waypoint(5,0, Pathfinder.d2r(0))
     // };
     for (int i = 0, j = 0; i < waypoints.size() - 1; i++, j++) {
-      Waypoint[] points = waypoints.subList(i, i + 1).toArray(Waypoint[]::new);
+      Waypoint[] points = waypoints.subList(i, i + 2).toArray(Waypoint[]::new);
       // SmartDashboard.putNumber("files writer2", 0);
 
       // Trajectory.Config config = new
@@ -91,7 +91,7 @@ public class AutonomousCmdTrajectoryFollowerFileGenerator extends Command {
           Trajectory.Config.SAMPLES_LOW, 0.05, 1.2, .5, .4);
 
       Trajectory trajectory = Pathfinder.generate(points, config);
-      File myFile = new File(String.format("/home/lvuser/%s%d.csv", j));
+      File myFile = new File(String.format("/home/lvuser/%s.csv", ScenarioName));
       Pathfinder.writeToCSV(myFile, trajectory);
 
       double wheelbase_width = .61; // MG updated
