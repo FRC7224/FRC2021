@@ -10,8 +10,8 @@ public class AutonomousGrpGalacticSearch extends CommandGroup {
     public AutonomousGrpGalacticSearch() { 
 
         // vision logic determines with case we're in
-        GripPipeline pipeline = new GripPipeline();
-        int PathType = pipeline.RunPipeline();
+        //GripPipeline pipeline = new GripPipeline();
+        int PathType = 2;// pipeline.RunPipeline();
         SmartDashboard.putNumber("Path Chosen", PathType);
         switch (PathType) {
             case 0:

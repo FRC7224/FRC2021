@@ -224,7 +224,7 @@ public class GripPipeline implements VisionPipeline {
 			}
 		}
 		// something screwed up
-		return 4;
+		return 2;
 	}
 
 }
