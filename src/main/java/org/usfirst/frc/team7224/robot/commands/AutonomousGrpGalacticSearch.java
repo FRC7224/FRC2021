@@ -1,13 +1,18 @@
 package org.usfirst.frc.team7224.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import org.usfirst.frc.team7224.robot.grip.GripPipeline;
 
 public class AutonomousGrpGalacticSearch extends CommandGroup {
 
     public AutonomousGrpGalacticSearch() { 
 
         // vision logic determines with case we're in
-        int PathType = 2;
+        GripPipeline pipeline = new GripPipeline();
+        int PathType = pipeline.RunPipeline();
+        SmartDashboard.putNumber("Path Chosen", PathType);
         switch (PathType) {
             case 0:
             // all files for path a1
@@ -19,7 +24,7 @@ public class AutonomousGrpGalacticSearch extends CommandGroup {
             break;
             case 2:
             // all files for path b1
-            for (int i = 1; i < 8; i++){
+            for (int i = 1; i < 5; i++){
                 addSequential(new AutonomousCmdTrajectoryFollowerTwoFixFile(String.format("/home/lvuser/PathB1_%d.csv", i)));
             }
            
