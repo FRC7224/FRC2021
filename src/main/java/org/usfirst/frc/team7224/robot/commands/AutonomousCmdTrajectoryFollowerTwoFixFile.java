@@ -22,7 +22,6 @@ import jaci.pathfinder.modifiers.TankModifier;
 
 public class AutonomousCmdTrajectoryFollowerTwoFixFile extends Command {
 
-
   edu.wpi.first.wpilibj.Timer timeout;
   Timer t;
   int gyrowait;
@@ -34,9 +33,6 @@ public class AutonomousCmdTrajectoryFollowerTwoFixFile extends Command {
   public String FileName = "";
   // This has a max size of three
 
-
-
-
   Waypoint[] waypoints = new Waypoint[2];
 
   public AutonomousCmdTrajectoryFollowerTwoFixFile(String fileName) { // filenum
@@ -46,10 +42,6 @@ public class AutonomousCmdTrajectoryFollowerTwoFixFile extends Command {
 
   @Override
   protected void initialize() {
-
-    Robot.intake.setIntakeMotor(RobotConstants.kmaxIntakeSpeed);
-    Robot.shoot.setturnSpeed(RobotConstants.kturnspeed);
-
 
     timeout = new edu.wpi.first.wpilibj.Timer();
     timeout.start();
@@ -62,15 +54,15 @@ public class AutonomousCmdTrajectoryFollowerTwoFixFile extends Command {
     // ***********************************************
     SmartDashboard.putString("debug output", "selecting file");
     // switch (Filenum) {
-    //   case 0: // Drive straight
-    //     fileString = "/home/lvuser/mytrafile.csv";
-    //     maxtimeout = 10;
-    //     break;
+    // case 0: // Drive straight
+    // fileString = "/home/lvuser/mytrafile.csv";
+    // maxtimeout = 10;
+    // break;
 
-    //   default: // Default drive straight
-    //     fileString = "/home/lvuser/driveStraight.traj";
-    //     maxtimeout = 10;
-    //     break;
+    // default: // Default drive straight
+    // fileString = "/home/lvuser/driveStraight.traj";
+    // maxtimeout = 10;
+    // break;
     // } // end of switch
 
     File myFile = new File(FileName);
@@ -191,8 +183,6 @@ public class AutonomousCmdTrajectoryFollowerTwoFixFile extends Command {
     } catch (IOException exc) {
       SmartDashboard.putString("debug output", "File reading error: " + exc.getMessage());
     }
-    Robot.intake.setIntakeMotor(0);
-    Robot.shoot.setturnSpeed(0);
   }
 
   @Override

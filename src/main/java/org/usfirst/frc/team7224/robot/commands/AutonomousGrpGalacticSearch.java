@@ -8,6 +8,7 @@ public class AutonomousGrpGalacticSearch extends CommandGroup {
 
         // vision logic determines with case we're in
         int PathType = 2;
+        addParallel(new AutonomousCmdRunIntake());
         switch (PathType) {
             case 0:
             // all files for path a1
